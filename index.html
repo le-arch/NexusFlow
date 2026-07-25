@@ -1231,6 +1231,8 @@
         (function() {
             'use strict';
 
+            console.log('JS loaded OK');
+
             // DOM refs 
             const pages = document.querySelectorAll('.page');
             const navLinks = document.querySelectorAll('[data-page]');
@@ -1306,11 +1308,7 @@
                 // Close mobile menu
                 closeMenu();
 
-                // FIX: wrap scroll in requestAnimationFrame to avoid forced reflow
-                requestAnimationFrame(() => {
-                    mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                });
-            }
+                mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             function navigateTo(pageName) {
                 if (window.location.hash !== '#' + pageName) {
