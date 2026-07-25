@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NexusFlow — The intelligent workflow automation platform for modern enterprises. Streamline operations, reduce costs, and scale with confidence.">
+    <meta name="theme-color" content="#0f2b46">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NexusFlow">
+    <meta property="og:title" content="NexusFlow — Enterprise Workflow Automation">
+    <meta property="og:description" content="The intelligent workflow automation platform for modern enterprises. Streamline operations, reduce costs, and scale with confidence.">
+    <meta property="og:url" content="https://nexusflow.example.com">
+    <meta property="og:image" content="https://nexusflow.example.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NexusFlow — Enterprise Workflow Automation">
+    <meta name="twitter:description" content="The intelligent workflow automation platform for modern enterprises.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://nexusflow.example.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>NexusFlow — Enterprise Workflow Automation Platform</title>
+
+    <style>
+        :root {
+            --color-navy: #0f2b46;
+            --color-navy-light: #1a3f5f;
+            --color-blue: #3b6df0;
+            --color-blue-dark: #2854c7;
+            --color-green: #10b981;
+            --color-green-dark: #059669;
+            --color-white: #ffffff;
+            --color-bg: #f8fafb;
+            --color-gray-50: #f9fafb;
+            --color-gray-100: #f1f5f9;
+            --color-gray-200: #e2e8f0;
+            --color-gray-300: #cbd5e1;
+            --color-gray-400: #94a3b8;
+            --color-gray-500: #64748b;
+            --color-gray-600: #475569;
+            --color-gray-700: #334155;
+            --color-gray-800: #1e293b;
+            --color-gray-900: #0f172a;
+            --color-red: #ef4444;
+            --color-red-light: #fef2f2;
+            --color-red-border: #fecaca;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+            --max-width: 1200px;
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.10);
+            --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.12);
+            --transition-fast: 150ms ease;
+            --transition-normal: 250ms ease;
+            --focus-ring: 0 0 0 3px rgba(59, 109, 240, 0.4);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-gray-800);
+            background: var(--color-white);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background: var(--color-navy);
+            color: var(--color-white);
+            padding: 12px 20px;
+            border-radius: var(--radius-sm);
+            z-index: 1000;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top var(--transition-fast);
+        }
+        .skip-link:focus {
+            top: 16px;
+            outline: var(--focus-ring);
+            outline-offset: 2px;
+        }
+
+        /* Header & Navigation */
+        .site-header {
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-gray-200);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .site-logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--color-navy);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .site-logo .logo-icon {
+            width: 34px;
+            height: 34px;
+            background: var(--color-blue);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 4px;
+            align-items: center;
+        }
+        .nav-list a {
+            display: block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: var(--color-gray-700);
+            font-weight: 500;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+        .nav-list a:hover {
+            background: var(--color-gray-100);
+            color: var(--color-navy);
+        }
+        .nav-list a:focus-visible {
+            outline: var(--focus-ring);
+            outline-offset: 2px;
+        }
+        .nav-list a.active {
+            background: var(--color-navy);
+            color: var(--color-white);
+        }
+        .nav-cta {
+            background: var(--color-blue) !important;
+            color: var(--color-white) !important;
+            font-weight: 600 !important;
+            padding: 8px 20px !important;
+            border-radius: var(--radius-sm) !important;
+            transition: background var(--transition-fast);
+        }
+        .nav-cta:hover {
+            background: var(--color-blue-dark) !important;
+            color: var(--color-white) !important;
+        }
+        .nav-cta.active {
+            background: var(--color-blue-dark) !important;
+        }
+
+        /* Mobile menu button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: var(--radius-sm);
+            color: var(--color-gray-700);
+            font-size: 1.6rem;
+            line-height: 1;
+            transition: background var(--transition-fast);
+            position: fixed; top: 16px; right: 16px; z-index: 200;
+        }
+        .menu-toggle:hover {
+            background: var(--color-gray-100);
+        }
+        .menu-toggle:focus-visible {
+            outline: var(--focus-ring);
+            outline-offset: 2px;
+        }
+        .menu-toggle[aria-expanded="true"] {
+            color: var(--color-blue);
+        }
+
+        /* Main content */
+        .main-content {
+            flex: 1;
+        }
+        .page {
+            display: none;
+            animation: fadeIn 0.2s ease;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section containers */
+        .section {
+            padding: 80px 24px;
+        }
+        .section-alt {
+            background: var(--color-bg);
+        }
+        .section-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .section-label {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-blue);
+            margin-bottom: 16px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--color-navy);
+            line-height: 1.15;
+            letter-spacing: -0.8px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700;
+            color: var(--color-navy);
+            line-height: 1.25;
+            letter-spacing: -0.4px;
+            margin-bottom: 16px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-gray-800);
+            margin-bottom: 8px;
+        }
+        p {
+            color: var(--color-gray-600);
+            margin-bottom: 16px;
+            max-width: 65ch;
+        }
+        .text-large {
+            font-size: 1.15rem;
+            color: var(--color-gray-500);
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all var(--transition-fast);
+            font-family: inherit;
+            white-space: nowrap;
+            min-height: 48px;
+            line-height: 1.2;
+        }
+        .btn:focus-visible {
+            outline: var(--focus-ring);
+            outline-offset: 3px;
+        }
+        .btn-primary {
+            background: var(--color-blue);
+            color: var(--color-white);
+        }
+        .btn-primary:hover {
+            background: var(--color-blue-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-secondary {
+            background: var(--color-white);
+            color: var(--color-navy);
+            border-color: var(--color-gray-300);
+        }
+        .btn-secondary:hover {
+            border-color: var(--color-navy);
+            background: var(--color-gray-50);
+        }
+        .btn-accent {
+            background: var(--color-green);
+            color: var(--color-white);
+        }
+        .btn-accent:hover {
+            background: var(--color-green-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-large {
+            padding: 16px 36px;
+            font-size: 1.1rem;
+            border-radius: var(--radius-md);
+        }
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 24px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        }
+        .hero h1 {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+        .hero .text-large {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 32px;
+        }
+        .hero .btn-group {
+            justify-content: center;
+        }
+
+        /* Card grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+        }
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+        .card-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 48px;
+          height: 48px;
+          border-radius: var(--radius-md);
+          font-size: 1.5rem;
+          transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .card-icon.blue { background: #eff6ff; color: #3b6df0; }
+        .card-icon.green { background: #ecfdf5; color: #10b981; }
+        .card-icon.navy { background: #eef2f6; color: #0f2b46; }
+
+        .card:hover .card-icon {
+          transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Logo cloud */
+        .logo-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 32px 48px;
+            padding: 40px 0;
+        }
+        .logo-placeholder {
+            font-weight: 700;
+            color: var(--color-gray-400);
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            filter: grayscale(1);
+            opacity: 0.7;
+        }
+
+        /* Pricing cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            align-items: stretch;
+        }
+        .pricing-card {
+            background: var(--color-white);
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-xl);
+            padding: 36px 28px;
+            text-align: center;
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+        }
+        .pricing-card:hover {
+            border-color: var(--color-blue);
+            box-shadow: var(--shadow-lg);
+        }
+        .pricing-card.featured {
+            border-color: var(--color-blue);
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            transform: scale(1.03);
+        }
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-blue);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--color-navy);
+            margin: 16px 0 4px;
+            letter-spacing: -1px;
+        }
+        .pricing-period {
+            color: var(--color-gray-500);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 28px;
+            flex: 1;
+        }
+        .pricing-features li {
+            padding: 8px 0;
+            color: var(--color-gray-600);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--color-green);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .pricing-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 750px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .faq-list details {
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            padding: 0;
+            transition: border-color var(--transition-fast);
+        }
+        .faq-list details:hover {
+            border-color: var(--color-gray-300);
+        }
+        .faq-list details[open] {
+            border-color: var(--color-blue);
+            box-shadow: var(--shadow-sm);
+        }
+        .faq-list summary {
+            padding: 18px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-gray-800);
+            font-size: 1rem;
+            border-radius: var(--radius-md);
+            transition: background var(--transition-fast);
+        }
+        .faq-list summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-list summary:hover {
+            background: var(--color-gray-50);
+        }
+        .faq-list summary:focus-visible {
+            outline: var(--focus-ring);
+            outline-offset: 2px;
+        }
+        .faq-list summary::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--color-gray-400);
+            transition: transform var(--transition-fast);
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+        .faq-list details[open] summary::after {
+            content: '−';
+            color: var(--color-blue);
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--color-gray-600);
+            line-height: 1.7;
+        }
+
+        /* Contact form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--color-gray-700);
+            font-size: 0.9rem;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--color-gray-300);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--color-gray-800);
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+            background: var(--color-white);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-blue);
+            box-shadow: 0 0 0 3px rgba(59, 109, 240, 0.15);
+        }
+        .form-group input.error,
+        .form-group textarea.error {
+            border-color: var(--color-red);
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+        .form-group .error-msg {
+            color: var(--color-red);
+            font-size: 0.85rem;
+            margin-top: 4px;
+            display: none;
+            font-weight: 500;
+        }
+        .form-group .error-msg.visible {
+            display: block;
+        }
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+        .form-success {
+            display: none;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            color: #065f46;
+            font-weight: 600;
+        }
+        .form-success.visible {
+            display: block;
+        }
+
+        /* Two-column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--color-navy);
+            color: var(--color-gray-300);
+            padding: 40px 24px;
+            margin-top: auto;
+        }
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-credit {
+            font-size: 0.85rem;
+            color: var(--color-gray-400);
+        }
+        .footer-credit a {
+            color: var(--color-blue);
+            text-decoration: underline;
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+        .footer-credit a:hover {
+            color: #60a5fa;
+        }
+        .footer-credit a:focus-visible {
+            outline: 2px solid white;
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--color-gray-400);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--transition-fast);
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: var(--color-white);
+                flex-direction: column;
+                padding: 16px 24px;
+                border-bottom: 2px solid var(--color-gray-200);
+                box-shadow: var(--shadow-lg);
+                gap: 2px;
+            }
+            .nav-list.open {
+                display: flex;
+            }
+            .nav-list a {
+                padding: 14px 16px;
+                font-size: 1rem;
+                border-radius: var(--radius-sm);
+            }
+            .hero {
+                padding: 60px 20px 48px;
+            }
+            .section {
+                padding: 48px 20px;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+            .pricing-card.featured {
+                transform: none;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links {
+                justify-content: center;
+            }
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-group .btn {
+                width: 100%;
+                justify-content: center;
+                max-width: 320px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+            h2 {
+                font-size: 1.35rem;
+            }
+            .pricing-price {
+                font-size: 2.4rem;
+            }
+            .logo-cloud {
+                gap: 20px 28px;
+            }
+            .logo-placeholder {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="site-header" role="banner">
+        <div class="header-inner">
+            <a href="#home" class="site-logo" aria-label="NexusFlow home">
+                <span class="logo-icon" aria-hidden="true">N</span>
+                NexusFlow
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+                <i class="fas fa-bars card-icon " aria-hidden="true"></i>
+            </button>
+            <nav id="mainNav" aria-label="Primary navigation">
+                <ul class="nav-list" id="navList" role="list">
+                    <li><a href="#home" data-page="home">Home</a></li>
+                    <li><a href="#product" data-page="product">Product</a></li>
+                    <li><a href="#pricing" data-page="pricing">Pricing</a></li>
+                    <li><a href="#contact" data-page="contact" class="nav-cta">Contact Sales</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" class="main-content" role="main">
+
+        <!-- HOME PAGE -->
+        <article class="page active" id="page-home" aria-labelledby="home-heading">
+            <!-- Hero -->
+            <section class="hero" aria-labelledby="home-heading">
+                <div class="section-inner">
+                    <span class="section-label">Enterprise Workflow Automation</span>
+                    <h1 id="home-heading">Automate the work that<br>slows your business down</h1>
+                    <p class="text-large">NexusFlow connects your teams, tools, and data into intelligent workflows — so you can focus on growth, not busywork.</p>
+                    <div class="btn-group">
+                        <a href="#pricing" class="btn btn-primary btn-large" data-nav="pricing">View Plans & Pricing</a>
+                        <a href="#product" class="btn btn-secondary btn-large" data-nav="product">See How It Works</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trusted by -->
+            <section class="section" aria-label="Trusted by industry leaders">
+                <div class="section-inner text-center">
+                    <p style="font-weight:600;color:var(--color-gray-400);text-transform:uppercase;letter-spacing:1px;font-size:0.8rem;margin-bottom:24px;">Trusted by forward-thinking enterprises</p>
+                    <div class="logo-cloud">
+                        <span class="logo-placeholder">▲ Meridian</span>
+                        <span class="logo-placeholder">● Stratos</span>
+                        <span class="logo-placeholder">■ NorthBank</span>
+                        <span class="logo-placeholder">◆ Apexion</span>
+                        <span class="logo-placeholder">⬡ HexaCorp</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Value propositions -->
+            <section class="section section-alt" aria-labelledby="value-heading">
+                <div class="section-inner">
+                    <h2 id="value-heading" class="text-center">Everything you need to scale operations</h2>
+                    <p class="text-large text-center mx-auto" style="margin-bottom:40px;">NexusFlow replaces fragmented tools with one unified automation layer.</p>
+                    <div class="card-grid">
+                        <div class="card">
+                            <div class="card-icon blue" aria-hidden="true"><i class="fas fa-bolt card-icon blue" aria-hidden="true"></i></div>
+                            <h3>Visual Workflow Builder</h3>
+                            <p>Drag, drop, and connect. Build complex automations in minutes with our intuitive no-code designer — no engineering required.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon green" aria-hidden="true"><i class="fas fa-link card-icon navy" aria-hidden="true"></i></div>
+                            <h3>300+ Integrations</h3>
+                            <p>Connect Slack, Salesforce, Jira, NetSuite, and hundreds more. NexusFlow talks to every tool in your stack out of the box.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon navy" aria-hidden="true"><i class="fas fa-chart-line card-icon green" aria-hidden="true"></i></div>
+                            <h3>Real-Time Analytics</h3>
+                            <p>Monitor every workflow, spot bottlenecks instantly, and optimize with actionable insights on your live dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="section text-center" aria-labelledby="cta-heading">
+                <div class="section-inner">
+                    <h2 id="cta-heading">Ready to transform your operations?</h2>
+                    <p class="text-large mx-auto" style="margin-bottom:24px;">Join 2,500+ enterprises that have automated over 50 million tasks with NexusFlow.</p>
+                    <a href="#contact" class="btn btn-accent btn-large" data-nav="contact">Talk to Our Team</a>
+                </div>
+            </section>
+        </article>
+
+        <!-- PRODUCT PAGE -->
+        <article class="page" id="page-product" aria-labelledby="product-heading">
+            <section class="hero" aria-labelledby="product-heading">
+                <div class="section-inner">
+                    <span class="section-label">Platform Overview</span>
+                    <h1 id="product-heading">One platform, endless<br>automation possibilities</h1>
+                    <p class="text-large">NexusFlow gives your teams a single place to design, deploy, and manage every automated workflow across the organization.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="features-heading">
+                <div class="section-inner">
+                    <h2 id="features-heading" class="text-center">Key capabilities</h2>
+                    <div class="card-grid" style="margin-top:32px;">
+                        <div class="card">
+                            <h3>No-Code Designer</h3>
+                            <p>Build sophisticated workflows with an intuitive visual canvas. Conditional logic, loops, and triggers — all without writing a single line of code.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Enterprise Security</h3>
+                            <p>SOC 2 Type II certified, with role-based access controls, audit logs, and end-to-end encryption. Your data stays safe and compliant.</p>
+                        </div>
+                        <div class="card">
+                            <h3>API & Webhooks</h3>
+                            <p>Extend NexusFlow with robust REST APIs and incoming/outgoing webhooks. Connect custom systems and legacy software effortlessly.</p>
+                        </div>
+                        <div class="card">
+                            <h3>AI-Powered Routing</h3>
+                            <p>Leverage machine learning to intelligently route tasks, predict approval outcomes, and surface anomalies before they become problems.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Version Control</h3>
+                            <p>Every workflow change is tracked. Roll back instantly, compare versions, and collaborate with confidence using built-in version history.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Mobile-First Access</h3>
+                            <p>Approve, review, and manage workflows from anywhere. The NexusFlow mobile experience works seamlessly on any device.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-alt text-center" aria-labelledby="integrations-heading">
+                <div class="section-inner">
+                    <h2 id="integrations-heading">Plugs into your entire stack</h2>
+                    <p class="text-large mx-auto">Pre-built connectors for CRM, ERP, HRIS, communication, and developer tools. New integrations added every month.</p>
+                    <div class="logo-cloud" style="margin-top:24px;">
+                        <span class="logo-placeholder">Salesforce</span>
+                        <span class="logo-placeholder">Slack</span>
+                        <span class="logo-placeholder">Jira</span>
+                        <span class="logo-placeholder">NetSuite</span>
+                        <span class="logo-placeholder">HubSpot</span>
+                        <span class="logo-placeholder">GitHub</span>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- PRICING PAGE -->
+        <article class="page" id="page-pricing" aria-labelledby="pricing-heading">
+            <section class="hero" aria-labelledby="pricing-heading">
+                <div class="section-inner">
+                    <span class="section-label">Pricing</span>
+                    <h1 id="pricing-heading">Plans that scale<br>with your business</h1>
+                    <p class="text-large">Start small, grow fast. All plans include a 14-day free trial with full access. No credit card required.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-label="Pricing plans">
+                <div class="section-inner">
+                    <div class="pricing-grid">
+                        <!-- Starter -->
+                        <div class="pricing-card">
+                            <h3>Starter</h3>
+                            <p style="color:var(--color-gray-500);">For small teams getting started</p>
+                            <div class="pricing-price">17,500 FCFA</div>
+                            <div class="pricing-period">per user / month</div>
+                            <ul class="pricing-features" role="list">
+                                <li>Up to 10 active workflows</li>
+                                <li>50+ standard integrations</li>
+                                <li>Visual workflow builder</li>
+                                <li>Email support</li>
+                                <li>1,000 automation runs/month</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-secondary" data-nav="contact">Start Free Trial</a>
+                        </div>
+                        <!-- Growth -->
+                        <div class="pricing-card featured">
+                            <span class="pricing-badge">Most Popular</span>
+                            <h3>Growth</h3>
+                            <p style="color:var(--color-gray-500);">For growing organizations</p>
+                            <div class="pricing-price">47,500 FCFA</div>
+                            <div class="pricing-period">per user / month</div>
+                            <ul class="pricing-features" role="list">
+                                <li>Unlimited workflows</li>
+                                <li>300+ premium integrations</li>
+                                <li>AI-powered routing</li>
+                                <li>Priority support</li>
+                                <li>50,000 automation runs/month</li>
+                                <li>API & webhook access</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-primary" data-nav="contact">Start Free Trial</a>
+                        </div>
+                        <!-- Enterprise -->
+                        <div class="pricing-card">
+                            <h3>Enterprise</h3>
+                            <p style="color:var(--color-gray-500);">For large organizations</p>
+                            <div class="pricing-price">Custom</div>
+                            <div class="pricing-period">tailored to your needs</div>
+                            <ul class="pricing-features" role="list">
+                                <li>Everything in Growth</li>
+                                <li>Unlimited automation runs</li>
+                                <li>Dedicated account manager</li>
+                                <li>SLA & 99.99% uptime</li>
+                                <li>Custom integrations</li>
+                                <li>On-premise deployment option</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-secondary" data-nav="contact">Contact Sales</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="section section-alt" aria-labelledby="faq-heading">
+                <div class="section-inner">
+                    <h2 id="faq-heading" class="text-center">Frequently asked questions</h2>
+                    <div class="faq-list" role="list">
+                        <details>
+                            <summary>Can I switch plans at any time?</summary>
+                            <div class="faq-answer">
+                                <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll pro-rate your billing accordingly. No penalties, no questions asked.</p>
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Is there a free trial available?</summary>
+                            <div class="faq-answer">
+                                <p>Absolutely. Every plan comes with a 14-day free trial that gives you full access to all features. No credit card is required to start your trial.</p>
+                            </div>
+                        </details>
+                        <details>
+                            <summary>What kind of support do you offer?</summary>
+                            <div class="faq-answer">
+                                <p>Starter plans include email support with a 24-hour response time. Growth plans get priority support with a 4-hour response window. Enterprise customers receive a dedicated account manager and 1-hour response SLA.</p>
+                            </div>
+                        </details>
+                        <details>
+                            <summary>How does the "automation runs" limit work?</summary>
+                            <div class="faq-answer">
+                                <p>An automation run is counted each time a workflow executes from start to finish. If your usage exceeds your plan limit, workflows continue to run and we'll notify you to upgrade. No hard cutoffs — your business never stops.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- CONTACT PAGE -->
+        <article class="page" id="page-contact" aria-labelledby="contact-heading">
+            <section class="hero" aria-labelledby="contact-heading">
+                <div class="section-inner">
+                    <span class="section-label">Get in Touch</span>
+                    <h1 id="contact-heading">Let's talk about<br>your automation goals</h1>
+                    <p class="text-large">Fill out the form and our team will get back to you within one business day.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="form-heading">
+                <div class="section-inner">
+                    <div class="two-col">
+                        <div>
+                            <h2 id="form-heading">Send us a message</h2>
+                            <form id="contactForm" novalidate aria-label="Contact form">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name <span aria-hidden="true">*</span></label>
+                                    <input type="text" id="fullName" name="fullName" required autocomplete="name" aria-required="true">
+                                    <span class="error-msg" id="fullNameError" role="alert">Please enter your full name.</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Work Email <span aria-hidden="true">*</span></label>
+                                    <input type="email" id="email" name="email" required autocomplete="email" aria-required="true">
+                                    <span class="error-msg" id="emailError" role="alert">Please enter a valid email address.</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="company">Company Name</label>
+                                    <input type="text" id="company" name="company" autocomplete="organization">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">How can we help? <span aria-hidden="true">*</span></label>
+                                    <textarea id="message" name="message" required aria-required="true" placeholder="Tell us about your automation needs..."></textarea>
+                                    <span class="error-msg" id="messageError" role="alert">Please tell us how we can help.</span>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                            </form>
+                            <div class="form-success" id="formSuccess" role="status">
+                                <p style="font-size:1.2rem;"> Message sent successfully!</p>
+                                <p>Our team will get back to you within one business day.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h2>Other ways to reach us</h2>
+                            <div class="card" style="margin-bottom:16px;">
+                                <h3><i class="fas fa-envelope card-icon blue" aria-hidden="true"></i> Email</h3>
+                                <p style="margin-bottom:0;">sales@nexusflow.example.com</p>
+                            </div>
+                            <div class="card" style="margin-bottom:16px;">
+                                <h3><i class="fas fa-phone-alt card-icon blue" aria-hidden="true"></i> Phone</h3>
+                                <p style="margin-bottom:0;">+237 6 50 00 00 00<br><small style="color:var(--color-gray-500);">Mon–Fri, 9am–6pm WAT</small></p>
+                            </div>
+                            <div class="card">
+                                <h3><i class="fas fa-map-marker card-icon navy" aria-hidden="true"></i> Headquarters</h3>
+                                <p style="margin-bottom:0;">Buea Town<br>Buea, South West Region<br>Cameroon</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <p class="footer-credit">
+                Built for <a href="https://digitalheroesco.com" target="_blank" rel="noopener noreferrer">Digital Heroes Training Task</a>
+            </p>
+            <ul class="footer-links" role="list">
+                <li><a href="#home" data-nav="home">Home</a></li>
+                <li><a href="#product" data-nav="product">Product</a></li>
+                <li><a href="#pricing" data-nav="pricing">Pricing</a></li>
+                <li><a href="#contact" data-nav="contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- STRUCTURED DATA (JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "NexusFlow",
+            "url": "https://nexusflow.example.com",
+            "description": "Enterprise workflow automation platform connecting teams, tools, and data into intelligent workflows.",
+            "logo": "https://nexusflow.example.com/logo.png",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+237-650000000",
+                "contactType": "sales",
+                "email": "sales@nexusflow.example.com",
+                "availableLanguage": ["English", "French"]
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Buea Town",
+                "addressLocality": "Buea",
+                "addressRegion": "South West",
+                "postalCode": "",
+                "addressCountry": "CM"
+            },
+            "sameAs": [
+                "https://twitter.com/nexusflow",
+                "https://linkedin.com/company/nexusflow"
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "NexusFlow Platform",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "description": "Intelligent workflow automation platform with visual builder, 300+ integrations, and AI-powered routing.",
+            "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": "17500",
+                "highPrice": "47500",
+                "priceCurrency": "XAF",
+                "offerCount": "3"
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+                "@type": "Question",
+                "name": "Can I switch plans at any time?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll pro-rate your billing accordingly."
+                }
+            }, {
+                "@type": "Question",
+                "name": "Is there a free trial available?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. Every plan comes with a 14-day free trial that gives you full access to all features. No credit card is required."
+                }
+            }, {
+                "@type": "Question",
+                "name": "What kind of support do you offer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Starter plans include email support with a 24-hour response time. Growth plans get priority support with a 4-hour response window. Enterprise customers receive a dedicated account manager."
+                }
+            }, {
+                "@type": "Question",
+                "name": "How does the automation runs limit work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "An automation run is counted each time a workflow executes. If usage exceeds your plan limit, workflows continue to run and we'll notify you to upgrade. No hard cutoffs."
+                }
+            }]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "NexusFlow",
+            "url": "https://nexusflow.example.com",
+            "description": "Enterprise workflow automation platform",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://nexusflow.example.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        (function() {
+            'use strict';
+
+            // DOM refs 
+            const pages = document.querySelectorAll('.page');
+            const navLinks = document.querySelectorAll('[data-page]');
+            const navLinksDataNav = document.querySelectorAll('[data-nav]');
+            const navList = document.getElementById('navList');
+            const menuToggle = document.getElementById('menuToggle');
+            const contactForm = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+            const mainContent = document.getElementById('main-content');
+
+            // Page routing
+            function getCurrentHash() {
+                const hash = window.location.hash.replace('#', '');
+                const validPages = ['home', 'product', 'pricing', 'contact'];
+                return validPages.includes(hash) ? hash : 'home';
+            }
+
+            function showPage(pageName) {
+                // Hide all pages
+                pages.forEach(p => {
+                    p.classList.remove('active');
+                    // Prevent focus on hidden content
+                    p.querySelectorAll('a, button, input, textarea, select, details').forEach(el => {
+                        if (p.classList.contains('active') === false && el.tagName ===
+                            'DETAILS') {
+                            el.open = false;
+                        }
+                    });
+                });
+
+                // Show target page
+                const targetPage = document.getElementById('page-' + pageName);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                }
+
+                // Update nav active states
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-page') === pageName) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Update document title
+                const titles = {
+                    home: 'NexusFlow — Enterprise Workflow Automation Platform',
+                    product: 'NexusFlow — Product Overview',
+                    pricing: 'NexusFlow — Pricing Plans',
+                    contact: 'NexusFlow — Contact Us'
+                };
+                document.title = titles[pageName] || titles.home;
+
+                // Update canonical meta
+                const canonical = document.querySelector('link[rel="canonical"]');
+                if (canonical) {
+                    canonical.href = 'https://nexusflow.example.com#' + pageName;
+                }
+
+                // Focus the page heading for screen reader context
+                setTimeout(() => {
+                    const heading = targetPage ? targetPage.querySelector('h1') : null;
+                    if (heading) {
+                        heading.setAttribute('tabindex', '-1');
+                        heading.focus({ preventScroll: true });
+                        heading.removeAttribute('tabindex');
+                    }
+                }, 100);
+
+                // Close mobile menu
+                closeMenu();
+
+                // Scroll to top of main content
+                mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            function navigateTo(pageName) {
+                if (window.location.hash !== '#' + pageName) {
+                    window.location.hash = pageName;
+                }
+                showPage(pageName);
+            }
+
+            // Event: hash change 
+            window.addEventListener('hashchange', function() {
+                showPage(getCurrentHash());
+            });
+
+            // Event: nav clicks
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageName = this.getAttribute('data-page');
+                    if (pageName) {
+                        navigateTo(pageName);
+                    }
+                });
+            });
+
+            // Also handle data-nav links (buttons, footer links)
+            navLinksDataNav.forEach(link => {
+                if (!link.hasAttribute('data-page')) {
+                    link.addEventListener('click', function(e) {
+                        const pageName = this.getAttribute('data-nav');
+                        if (pageName && document.getElementById('page-' + pageName)) {
+                            e.preventDefault();
+                            navigateTo(pageName);
+                        }
+                    });
+                }
+            });
+
+            // Mobile menu 
+            function openMenu() {
+                navList.classList.add('open');
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.textContent = '✕';
+                menuToggle.setAttribute('aria-label', 'Close navigation menu');
+            }
+
+            function closeMenu() {
+                navList.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.textContent = '☰';
+                menuToggle.setAttribute('aria-label', 'Open navigation menu');
+            }
+
+            menuToggle.addEventListener('click', function() {
+                if (navList.classList.contains('open')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            // Close menu on Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navList.classList.contains('open')) {
+                    closeMenu();
+                    menuToggle.focus();
+                }
+            });
+
+            // Contact form validation 
+            function showError(inputId, errorId) {
+                const input = document.getElementById(inputId);
+                const error = document.getElementById(errorId);
+                if (input) input.classList.add('error');
+                if (error) error.classList.add('visible');
+            }
+
+            function clearError(inputId, errorId) {
+                const input = document.getElementById(inputId);
+                const error = document.getElementById(errorId);
+                if (input) input.classList.remove('error');
+                if (error) error.classList.remove('visible');
+            }
+
+            function validateEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            if (contactForm) {
+                // Live validation on blur
+                const fullNameInput = document.getElementById('fullName');
+                const emailInput = document.getElementById('email');
+                const messageInput = document.getElementById('message');
+
+                fullNameInput.addEventListener('blur', function() {
+                    if (this.value.trim() === '') {
+                        showError('fullName', 'fullNameError');
+                    } else {
+                        clearError('fullName', 'fullNameError');
+                    }
+                });
+
+                emailInput.addEventListener('blur', function() {
+                    if (!validateEmail(this.value.trim())) {
+                        showError('email', 'emailError');
+                    } else {
+                        clearError('email', 'emailError');
+                    }
+                });
+
+                messageInput.addEventListener('blur', function() {
+                    if (this.value.trim() === '') {
+                        showError('message', 'messageError');
+                    } else {
+                        clearError('message', 'messageError');
+                    }
+                });
+
+                // Submit
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    let isValid = true;
+
+                    if (fullNameInput.value.trim() === '') {
+                        showError('fullName', 'fullNameError');
+                        isValid = false;
+                    }
+                    if (!validateEmail(emailInput.value.trim())) {
+                        showError('email', 'emailError');
+                        isValid = false;
+                    }
+                    if (messageInput.value.trim() === '') {
+                        showError('message', 'messageError');
+                        isValid = false;
+                    }
+
+                    if (isValid) {
+                        contactForm.style.display = 'none';
+                        formSuccess.classList.add('visible');
+                        // Announce success to screen readers
+                        formSuccess.setAttribute('tabindex', '-1');
+                        formSuccess.focus();
+                    } else {
+                        // Focus first invalid field
+                        const firstError = contactForm.querySelector('.error');
+                        if (firstError) firstError.focus();
+                    }
+                });
+            }
+
+            // Initialize
+            const initialPage = getCurrentHash();
+            if (window.location.hash === '' || window.location.hash === '#') {
+                window.location.hash = 'home';
+            }
+            showPage(initialPage);
+
+            // Trap focus inside mobile menu when open (basic) 
+            navList.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab' && navList.classList.contains('open')) {
+                    const focusable = navList.querySelectorAll(
+                        'a, button, input, [tabindex]:not([tabindex="-1"])');
+                    if (focusable.length === 0) return;
+                    const first = focusable[0];
+                    const last = focusable[focusable.length - 1];
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
+            });
+
+        })();
+    </script>
+</body>
+</html>
