@@ -802,6 +802,7 @@
                 NexusFlow
             </a>
             <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+                <!-- Hamburger SVG (initial state) -->
                 <svg aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
             </button>
             <nav id="mainNav" aria-label="Primary navigation">
@@ -865,7 +866,6 @@
                         </div>
                         <div class="card">
                             <!-- Chart line (Analytics) -->
-                                <!-- Chart line (Analytics) -->
                             <svg class="card-icon navy" aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99l1.5 1.5z"/></svg>
                             <h3>Real-Time Analytics</h3>
                             <p>Monitor every workflow, spot bottlenecks instantly, and optimize with actionable insights on your live dashboard.</p>
@@ -1086,18 +1086,24 @@
                         <div>
                             <h2>Other ways to reach us</h2>
                             <div class="card" style="margin-bottom:16px;">
-                                <h3><!-- Envelope -->
-                                <svg class="card-icon blue" aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="margin-right:8px;vertical-align:middle;"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> Email</h3>
+                                <h3>
+                                    <!-- Envelope -->
+                                    <svg class="card-icon blue" aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="margin-right:8px;vertical-align:middle;"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> Email
+                                </h3>
                                 <p style="margin-bottom:0;">sales@nexusflow.example.com</p>
                             </div>
                             <div class="card" style="margin-bottom:16px;">
-                                <h3><!-- Phone -->
-<svg class="card-icon blue" aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="margin-right:8px;vertical-align:middle;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Phone</h3>
+                                <h3>
+                                    <!-- Phone -->
+                                    <svg class="card-icon blue" aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="margin-right:8px;vertical-align:middle;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Phone
+                                </h3>
                                 <p style="margin-bottom:0;">+237 6 50 00 00 00<br><small style="color:var(--color-gray-500);">Mon–Fri, 9am–6pm WAT</small></p>
                             </div>
                             <div class="card">
-                                <h3><!-- Map marker -->
-<svg class="card-icon navy" aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="margin-right:8px;vertical-align:middle;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Headquarters</h3>
+                                <h3>
+                                    <!-- Map marker -->
+                                    <svg class="card-icon navy" aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="margin-right:8px;vertical-align:middle;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Headquarters
+                                </h3>
                                 <p style="margin-bottom:0;">Buea Town<br>Buea, South West Region<br>Cameroon</p>
                             </div>
                         </div>
@@ -1235,6 +1241,10 @@
             const formSuccess = document.getElementById('formSuccess');
             const mainContent = document.getElementById('main-content');
 
+            // SVG strings for menu icons
+            const hamburgerSVG = '<svg aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>';
+            const closeSVG = '<svg aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M6.4 6.4L12 12l5.6-5.6 1.4 1.4L13.4 13.4 19 19l-1.4 1.4L12 14.8l-5.6 5.6L5 19l5.6-5.6L5 7.8z"/></svg>';
+
             // Page routing
             function getCurrentHash() {
                 const hash = window.location.hash.replace('#', '');
@@ -1248,8 +1258,7 @@
                     p.classList.remove('active');
                     // Prevent focus on hidden content
                     p.querySelectorAll('a, button, input, textarea, select, details').forEach(el => {
-                        if (p.classList.contains('active') === false && el.tagName ===
-                            'DETAILS') {
+                        if (p.classList.contains('active') === false && el.tagName === 'DETAILS') {
                             el.open = false;
                         }
                     });
@@ -1297,8 +1306,10 @@
                 // Close mobile menu
                 closeMenu();
 
-                // Scroll to top of main content
-                mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // FIX: wrap scroll in requestAnimationFrame to avoid forced reflow
+                requestAnimationFrame(() => {
+                    mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
             }
 
             function navigateTo(pageName) {
@@ -1341,14 +1352,14 @@
             function openMenu() {
                 navList.classList.add('open');
                 menuToggle.setAttribute('aria-expanded', 'true');
-                menuToggle.textContent = '✕';
+                menuToggle.innerHTML = closeSVG;           // Swap to close icon
                 menuToggle.setAttribute('aria-label', 'Close navigation menu');
             }
 
             function closeMenu() {
                 navList.classList.remove('open');
                 menuToggle.setAttribute('aria-expanded', 'false');
-                menuToggle.textContent = '☰';
+                menuToggle.innerHTML = hamburgerSVG;       // Swap back to hamburger
                 menuToggle.setAttribute('aria-label', 'Open navigation menu');
             }
 
